@@ -1,92 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Library Management System</title>
-        <link rel="stylesheet" href="styless.css">
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 20px;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Login</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f39c12, #d35400);
+            color: #fff;
+        }
+
+        #maincontainer {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        #maincontainer:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #f39c12;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 12px #f39c12;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+
+        @media screen and (max-width: 600px) {
+            #maincontainer {
+                width: 90%;
+                padding: 30px;
             }
+        }
+    </style>
+</head>
 
-            form {
-                margin-bottom: 20px;
-            }
+<body>
 
-            input,
-            select,
-            button {
-                margin: 10px 0;
-                padding: 10px;
-            }
+    <div id="maincontainer">
+        <h1>Library Management System</h1>
+        <h2>Login</h2>
+        <form action="login.php" method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
-        </style>
-    </head>
-
-    <body>
-              
-
-        <div id="maincontainer">
-            <div id="innercontainer">
-                <h1>Library Management System</h1>
-                
-                <h2>Login</h2>
-                <form action="login.php" method="POST">
-                    <input type="email" name="email" placeholder="Email" required><br>
-                    <input type="password" name="password" placeholder="Password" required><br>
-                    <button type="submit">Login</button>
-                </form>
-                
-                <h2>Add Book</h2>
-                <form action="add_book.php" method="POST">
-                    <input type="text" name="title" placeholder="Book Title" required><br>
-                    <input type="text" name="author" placeholder="Author Name" required><br>
-                    <input type="number" name="quantity" placeholder="Quantity" required><br>
-                    <button type="submit">Add Book</button>
-                </form>
-                
-                <h2>Issue Book</h2>
-                <form action="issue_book.php" method="POST">
-                    <input type="text" name="book_name" placeholder="Book Name" required><br>
-                    <input type="text" name="author_name" placeholder="Author Name" readonly><br>
-                    <input type="date" name="issue_date" required><br>
-                    <input type="date" name="return_date" required><br>
-                    <button type="submit">Issue Book</button>
-                </form>
-                
-                <h2>Return Book</h2>
-                <form action="return_book.php" method="POST">
-                    <input type="text" name="book_name" placeholder="Book Name" required><br>
-                    <input type="text" name="author_name" placeholder="Author Name" readonly><br>
-                    <input type="text" name="serial_no" placeholder="Serial No" required><br>
-                    <button type="submit">Return Book</button>
-                </form>
-                
-                <h2>Pay Fine</h2>
-                <form action="fine.php" method="POST">
-                    <input type="text" name="book_name" placeholder="Book Name" required><br>
-                    <input type="text" name="fine_amount" placeholder="Fine Amount" readonly><br>
-                    <input type="checkbox" name="fine_paid"> Fine Paid<br>
-                    <button type="submit">Pay Fine</button>
-                </form>
-                
-                <h2>Add Membership</h2>
-                <form action="add_membership.php" method="POST">
-                    <input type="text" name="user_name" placeholder="User Name" required><br>
-                    <select name="membership_type">
-                        <option value="6 Months">6 Months</option>
-                        <option value="1 Year">1 Year</option>
-                        <option value="2 Years">2 Years</option>
-                    </select><br>
-                    <button type="submit">Add Membership</button>
-                </form>
-            </div>
-        </div>
-        
-
-    </body>
+</body>
 
 </html>
